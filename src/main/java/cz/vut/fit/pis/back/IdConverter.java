@@ -6,7 +6,7 @@ import javax.faces.convert.Converter;
 import javax.faces.convert.ConverterException;
 import javax.faces.convert.FacesConverter;
 
-@FacesConverter(value="idConverter")
+@FacesConverter("idConverter")
 public class IdConverter implements Converter<Long> 
 {
 
