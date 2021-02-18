@@ -29,7 +29,7 @@
 				<h:outputLabel rendered="true" value="Date of birth"></h:outputLabel>
 				<h:inputText value="#{personBean.person.born}" required="true">
 					<f:validateLength minimum="8" />
-					<f:convertDateTime pattern="d.m.yyyy" />
+					<f:convertDateTime pattern="d.M.yyyy" />
 				</h:inputText>
 			</h:panelGrid>
 			
