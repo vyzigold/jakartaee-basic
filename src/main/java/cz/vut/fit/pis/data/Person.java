@@ -4,7 +4,6 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.Vector;
 
-import javax.json.bind.annotation.JsonbDateFormat;
 import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -26,7 +25,7 @@ public class Person
 	private String name;
     private String surname;
     @Temporal(TemporalType.DATE)
-    @JsonbDateFormat("yyyy-MM-dd")
+    //@JsonbDateFormat("yyyy-MM-dd z")
     private Date born;
     @OneToMany(cascade = { ALL }, fetch = EAGER, mappedBy = "owner", orphanRemoval = true)
     @JsonbTransient
