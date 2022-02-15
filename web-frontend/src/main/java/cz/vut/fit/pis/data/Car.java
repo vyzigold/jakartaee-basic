@@ -1,13 +1,11 @@
 package cz.vut.fit.pis.data;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import static javax.persistence.FetchType.EAGER;
-
-import javax.json.bind.annotation.JsonbTransient;
+import jakarta.json.bind.annotation.JsonbTransient;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "Car")
@@ -18,7 +16,7 @@ public class Car
 	private String prod;
 	private String type;
 	
-	@ManyToOne(fetch=EAGER)
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JsonbTransient
     private Person owner;
 	

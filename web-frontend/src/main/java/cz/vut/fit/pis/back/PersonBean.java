@@ -3,13 +3,12 @@ package cz.vut.fit.pis.back;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.ejb.EJB;
-import javax.enterprise.context.SessionScoped;
-import javax.inject.Named;
-
 import cz.vut.fit.pis.data.Car;
 import cz.vut.fit.pis.data.Person;
 import cz.vut.fit.pis.service.PersonManager;
+import jakarta.ejb.EJB;
+import jakarta.enterprise.context.SessionScoped;
+import jakarta.inject.Named;
 
 @Named
 @SessionScoped
