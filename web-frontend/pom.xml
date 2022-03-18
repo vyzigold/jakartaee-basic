@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    
+
     <parent>
-	    <artifactId>jakartaee-basic</artifactId>
-	    <groupId>cz.vut.fit.pis</groupId>
-	    <version>1.0-SNAPSHOT</version>
+        <artifactId>jakartaee-basic</artifactId>
+        <groupId>cz.vut.fit.pis</groupId>
+        <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>web-frontend</artifactId>
     <packaging>war</packaging>
-    
+
     <name>Jakarta EE Web Frontend Demo</name>
 
     <dependencies>
@@ -36,6 +36,28 @@
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.22.2</version>
+            </plugin>
+
+            <!-- Enable liberty-maven plugin in VSC with mysql jdbc connector -->
+            <plugin>
+                <groupId>io.openliberty.tools</groupId>
+                <artifactId>liberty-maven-plugin</artifactId>
+                <version>3.3.3</version>
+                <configuration>
+                    <container>false</container>
+                    <copyDependencies>
+                        <location>jdbc</location>
+                        <dependency> 
+                            <groupId>mysql</groupId>
+                            <artifactId>mysql-connector-java</artifactId>
+                            <!-- You can omit the version below if you have 
+                                declared a dependency and want to simply use 
+                                that version, or specify the version as shown 
+                            if you don't include this artifact as a dependency. -->
+                            <version>8.0.26</version> 
+                        </dependency>
+                    </copyDependencies>
+                </configuration>
             </plugin>
         </plugins>        
         <finalName>web-frontend</finalName>
